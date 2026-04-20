@@ -1,0 +1,32 @@
+#%RAML 1.0
+title: Simple Customer API
+version: v1
+
+protocols: [ HTTPS ]
+mediaType: application/json
+
+/customers:
+  get:
+    description: Get all customers
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              [
+                { "id": 1, "name": "Ravi" },
+                { "id": 2, "name": "Sita" }
+              ]
+
+  post:
+    description: Create a new customer
+    body:
+      application/json:
+        example:
+          { "id": 3, "name": "Krishna" }
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              { "message": "Customer created successfully" }
