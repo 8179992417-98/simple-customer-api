@@ -5,7 +5,7 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
         <http:listener-connection host="0.0.0.0" port="8081" />
     </http:listener-config>
     <apikit:config name="addition-config" api="addition.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
-    <api-gateway:autodiscovery apiId="20861000" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="b7ae7d9c-4778-4196-bb74-0ff83f4f35b4" flowRef="addition-main"/>
+    <api-gateway:autodiscovery apiId="20861930" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="b7ae7d9c-4778-4196-bb74-0ff83f4f35b4" flowRef="addition-main"/>
 	<flow name="addition-main">
         <http:listener config-ref="addition-httpListenerConfig" path="/api/*">
             <http:response statusCode="#[vars.httpStatus default 200]">
